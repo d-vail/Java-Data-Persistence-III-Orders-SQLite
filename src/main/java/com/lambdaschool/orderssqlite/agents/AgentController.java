@@ -40,14 +40,14 @@ public class AgentController {
   /**
    * Delete an agent if agent is not assigned to a customer or order
    *
-   * @param agentcode An agent code
+   * @param agentCode An agent code
    */
-  @DeleteMapping("/{agentcode}")
-  public void deleteAgent(@PathVariable long agentcode) {
-    Agent agent = agentRepo.findByAgentCode(agentcode);
+  @DeleteMapping("/{agentCode}")
+  public void deleteAgent(@PathVariable long agentCode) {
+    Agent agent = agentRepo.findByAgentCode(agentCode);
 
     if(agent.getOrders().size() == 0 && agent.getCustomers().size() == 0) {
-      agentRepo.deleteById(agentcode);
+      agentRepo.deleteById(agentCode);
     }
   }
 }

@@ -16,8 +16,8 @@ public interface AgentCustomerList {
   Set<CustomerList> getCustomers();
 
   interface CustomerList {
-    long getCustCode();
-    String getCustName();
+    long getCustomerCode();
+    String getCustomerName();
     String getPhone();
   }
 }

@@ -12,7 +12,7 @@ public interface AgentOrderList {
   Set<OrderList> getOrders();
 
   interface OrderList {
-    long getOrderNum();
-    String getOrdDescription();
+    long getOrderNumber();
+    String getOrderDescription();
   }
 }
