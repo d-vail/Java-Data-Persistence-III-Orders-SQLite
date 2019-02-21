@@ -9,7 +9,7 @@ import java.util.Set;
  * associated orders.
  */
 public interface OrderListByCustomer {
-  Long getCustCode();
-  String getCustName();
+  Long getCustomerCode();
+  String getCustomerName();
   Set<Order> getOrders();
 }
