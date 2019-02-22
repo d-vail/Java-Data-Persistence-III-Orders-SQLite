@@ -10,8 +10,9 @@ import java.util.List;
  * A database interface for the customer table
  */
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
+  CustomerSummary findByCustomerCode(long customerCode);
+  OrderListByCustomer findOrderListByCustomerCode(long customerCode);
   List<CustomerSummary> findAllBy();
-  CustomerSummary findByCustomerCode(Long customerCode);
   List<OrderListByCustomer> findOrderListByCustomerName(String customerName);
   List<OrderListByCustomer> findAllCustomerOrderListsBy();
 
