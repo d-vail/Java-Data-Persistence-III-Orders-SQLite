@@ -4,10 +4,7 @@ import com.lambdaschool.orderssqlite.customers.projections.CustomerSummary;
 import com.lambdaschool.orderssqlite.customers.projections.OrderListByCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -71,6 +68,17 @@ public class CustomerController {
   @GetMapping("/orders/{customerCode}")
   public OrderListByCustomer findOrdersByCustomerCode(@PathVariable long customerCode) {
     return customerRepo.findOrderListByCustomerCode(customerCode);
+  }
+
+  /**
+   * Create a new customer.
+   *
+   * @param customer  A customer JSON data object
+   * @return          The saved customer
+   */
+  @PostMapping()
+  public Customer createCustomer(@RequestBody Customer customer) {
+    return customerRepo.save(customer);
   }
 
   /**
