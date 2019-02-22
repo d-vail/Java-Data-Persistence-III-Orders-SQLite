@@ -68,28 +68,6 @@ public class CustomerController {
   }
 
   /**
-   * Find all orders for customers with the given name.
-   *
-   * @param customerName  A customer name
-   * @return              A list of customers with the given name and their orders
-   */
-//  @GetMapping("/name/{customerName}")
-//  public List<OrderListByCustomer> findOrdersByCustomerName(@PathVariable String customerName) {
-//    return customerRepo.findByCustomerName(customerName);
-//  }
-
-  /**
-   * Find all orders for the given customer code.
-   *
-   * @param customerCode  A customer code
-   * @return              A list of all orders associated with the given customer code
-   */
-//  @GetMapping("/order/{customerCode}")
-//  public OrderList findOrdersByCustomerCode(@PathVariable long customerCode) {
-//    return customerRepo.findByCustomerCode(customerCode);
-//  }
-
-  /**
    * Delete customer associated with given customer code.
    *
    * @param customerCode  A customer code

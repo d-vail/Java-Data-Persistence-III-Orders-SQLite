@@ -15,7 +15,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
   List<CustomerSummary> findAllBy();
   List<OrderListByCustomer> findOrderListByCustomerName(String customerName);
   List<OrderListByCustomer> findAllCustomerOrderListsBy();
-
-//  List<OrderListByCustomer> findByCustomerName(String customerName);
-//  OrderList findByCustomerCode(long customerCode);
 }
