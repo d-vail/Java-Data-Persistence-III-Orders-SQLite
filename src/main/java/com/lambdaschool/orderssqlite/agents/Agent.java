@@ -6,8 +6,8 @@ import com.lambdaschool.orderssqlite.orders.Order;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Agent table modeled after the sample database found on W3Resource.
@@ -40,11 +40,11 @@ public class Agent {
 
   @JsonManagedReference
   @OneToMany(mappedBy = "agent")
-  private Set<Customer> customers = new HashSet<>();
+  private List<Customer> customers = new ArrayList<>();
 
   @JsonManagedReference
   @OneToMany(mappedBy = "agent")
-  private Set<Order> orders = new HashSet<>();
+  private List<Order> orders = new ArrayList<>();
 
   /**
    * Default Constructor
