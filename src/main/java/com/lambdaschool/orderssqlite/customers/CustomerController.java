@@ -45,7 +45,7 @@ public class CustomerController {
    * Find all orders by the customer name.
    *
    * @param customerName  The customer name
-   * @return              A list of each matching customer and their orders
+   * @return              A list of each matching customer and their order lists
    */
   @GetMapping("/name/{customerName}")
   public List<OrderListByCustomer> findOrdersByCustomerName(@PathVariable String customerName) {
@@ -62,6 +62,12 @@ public class CustomerController {
     return customerRepo.findAllCustomerOrderListsBy();
   }
 
+  /**
+   * Find all orders for a customer based on the customer code.
+   *
+   * @param customerCode  The customer code
+   * @return              The matching customer and their order list
+   */
   @GetMapping("/orders/{customerCode}")
   public OrderListByCustomer findOrdersByCustomerCode(@PathVariable long customerCode) {
     return customerRepo.findOrderListByCustomerCode(customerCode);
