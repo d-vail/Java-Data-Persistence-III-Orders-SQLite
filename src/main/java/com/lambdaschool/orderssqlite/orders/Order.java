@@ -8,13 +8,13 @@ import lombok.Data;
 import javax.persistence.*;
 
 /**
- * Order table modeled after the sample database found on W3Resource.
+ * Orders table modeled after the sample database found on W3Resource.
  *
  * @see <a href="https://www.w3resource.com/sql/sql-table.php">W3Resource Sample Database</a>
  */
 @Data
 @Entity
-@Table(name = "Order")
+@Table(name = "Orders")
 public class Order {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
