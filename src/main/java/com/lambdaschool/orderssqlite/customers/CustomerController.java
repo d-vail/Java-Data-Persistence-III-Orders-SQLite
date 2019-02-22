@@ -57,10 +57,10 @@ public class CustomerController {
    *
    * @return  A list of all customers with their orders
    */
-//  @GetMapping("/order")
-//  public List<OrderListByCustomer> findAllCustomers() {
-//    return customerRepo.findAllCustomerOrderListBy();
-//  }
+  @GetMapping("/orders")
+  public List<OrderListByCustomer> findAllCustomerOrders() {
+    return customerRepo.findAllCustomerOrderListsBy();
+  }
 
   /**
    * Find all orders for customers with the given name.
