@@ -38,11 +38,11 @@ public class Agent {
   @Column(name = "Country")
   private String country;
 
-  @JsonManagedReference
+  @JsonManagedReference(value = "agent-customer")
   @OneToMany(mappedBy = "agent")
   private List<Customer> customers = new ArrayList<>();
 
-  @JsonManagedReference
+  @JsonManagedReference(value = "agent-order")
   @OneToMany(mappedBy = "agent")
   private List<Order> orders = new ArrayList<>();
 

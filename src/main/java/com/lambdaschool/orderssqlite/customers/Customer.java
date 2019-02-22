@@ -54,12 +54,12 @@ public class Customer {
   @Column(name = "Phone", nullable = false)
   private String phone;
 
-  @JsonBackReference
+  @JsonBackReference(value = "agent-customer")
   @ManyToOne
   @JoinColumn(name = "AgentCode", nullable = false)
   private Agent agent;
 
-  @JsonManagedReference
+  @JsonManagedReference(value = "customer-order")
   @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "customer")
   private List<Order> orders = new ArrayList<>();
 

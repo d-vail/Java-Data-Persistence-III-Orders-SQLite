@@ -27,12 +27,12 @@ public class Order {
   @Column(name = "AdvanceAmount", nullable = false)
   private double advanceAmount;
 
-  @JsonBackReference
+  @JsonBackReference(value = "customer-order")
   @ManyToOne
   @JoinColumn(name = "CustomerCode", nullable = false)
   private Customer customer;
 
-  @JsonBackReference
+  @JsonBackReference(value = "agent-order")
   @ManyToOne
   @JoinColumn(name = "AgentCode", nullable = false)
   private Agent agent;
