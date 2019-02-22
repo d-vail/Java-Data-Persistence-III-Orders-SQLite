@@ -29,6 +29,17 @@ public class CustomerController {
   }
 
   /**
+   * Find customer by the customer code
+   *
+   * @param customerCode  The customer code
+   * @return              A customer summary or null if customer is not found
+   */
+  @GetMapping("/custcode/{customerCode}")
+  public CustomerSummary findCustomerByCustomerCode(@PathVariable Long customerCode) {
+    return customerRepo.findByCustomerCode(customerCode);
+  }
+
+  /**
    * Find all customers with their orders.
    *
    * @return  A list of all customers with their orders
